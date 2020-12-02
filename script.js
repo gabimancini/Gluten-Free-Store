@@ -11,6 +11,9 @@ fetch(url)
             let title = infos[i].title;
             let price = infos[i].price;
             let rating = infos[i].rating;
+
+            /* Se remueve la categoría “bakery" */
+          
             /* Creación de un <tr> por cada iteración */
             const tr = document.createElement('tr');
             tr.innerHTML = `
@@ -19,6 +22,13 @@ fetch(url)
                 <td>${price}</td>
                 <td>${rating}</td>
             `
-            tbody.appendChild(tr)
+            tbody.appendChild(tr);
+            if(type === "bakery" ){
+                tr.style.display = "none";
+            }
+            if(type==="fruit"){
+                tr.classList.add("orange");
+            }
         }
     })
+    

@@ -13,9 +13,11 @@ fetch(url)
             let title = infos[i].title;
             let price = infos[i].price;
             let rating = infos[i].rating; 
-            if(type === "bakery" ||tr.contains(title)  ){
+            
+            if(type === "bakery" ){
                 tr.style.display = "none";
             }
+
             /* Creación de un <tr> por cada iteración */
             tr.innerHTML = `
                 <td>${type}</td>
@@ -23,8 +25,6 @@ fetch(url)
                 <td>${price}</td>
                 <td>${rating}</td>
             `
-            
-           
             tbody.appendChild(tr);
              /* Se remueve la categoría “bakery" */
           
